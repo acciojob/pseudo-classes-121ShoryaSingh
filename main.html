@@ -1,16 +1,77 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced CSS Selectors</title>
+<style>
+  /* Sets the background color for the entire page */
+  :root {
+    background-color: rgb(135, 206, 235);
+  }
 
+  /* --- Article Paragraph Styling --- */
+
+  /* First paragraph: white text on a black background */
+  article p:first-child {
+    background-color: black;
+    color: white;
+  }
+
+  /* Second paragraph: standard text color (inherits from browser default) */
+  article p:nth-child(2) {
+    color: inherit;
+  }
+
+  /* Third paragraph: red text */
+  article p:last-child {
+    color: red;
+  }
+
+  /* --- Unordered List Styling --- */
+
+  /* Base styles for all list items */
+  ul li {
+    background-color: gray;
+    width: 50%;
+    padding: 10px;
+    list-style: none; /* Removes default bullet points */
+  }
+
+  /* Every odd-numbered list item (1st, 3rd, 5th) gets a white background */
+  ul li:nth-child(odd) {
+    background-color: white;
+  }
+
+  /* The first and last list items get a larger font size */
+  ul li:first-child,
+  ul li:last-child {
+    font-size: 22px;
+  }
+
+  /* The third-to-last item (Item 3) gets a pink background */
+  ul li:nth-last-child(3) {
+    background-color: pink;
+  }
+</style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+<!-- Article Section -->
+<article>
+  <p>This is the first paragraph. It should have a black background and white text.</p>
+  <p>This is the second paragraph. It uses the standard text color.</p>
+  <p>This is the third and final paragraph. Its text should be red.</p>
+</article>
+
+<!-- Unordered List Section -->
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+</ul>
 
 </body>
-
 </html>
